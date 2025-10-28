@@ -9,7 +9,7 @@ import { useAtom } from "jotai";
 import { placeAtom, loadingCityAtom } from "../app/atom";
 import SearchInput from "./SearchInput";
 import OptionBox from "./OptionBox";
-import { MapPin, Sun, LocateFixed } from "lucide-react";
+import { MapPin, ThermometerSun, LocateFixed } from "lucide-react";
 
 
 
@@ -133,7 +133,7 @@ export default function Navbar({ location }: Props) {
             <h2 className="text-gray-700 text-3xl font-bold tracking-tight">
               WEATHER
             </h2>
-            <Sun className="w-7 h-7 text-yellow-500" />
+            <ThermometerSun className="w-7 h-7 text-yellow-500" />
           </p>
 
           <section className="flex gap-4 items-center">
@@ -160,8 +160,7 @@ export default function Navbar({ location }: Props) {
                 value={city}
                 onSubmit={handleSubmitSearch}
                 onChange={(e) => handleInputChange(e.target.value)}
-              >
-              </SearchInput>
+              ></SearchInput>
 
               <OptionBox
                 showOptions={showOptions}
