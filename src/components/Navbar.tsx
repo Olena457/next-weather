@@ -9,7 +9,7 @@ import { useAtom } from "jotai";
 import { placeAtom, loadingCityAtom } from "../app/atom";
 import SearchInput from "./SearchInput";
 import OptionBox from "./OptionBox";
-import { MapPin, ThermometerSun, LocateFixed } from "lucide-react";
+import { MapPin, SunSnow, LocateFixed } from "lucide-react";
 
 
 
@@ -129,24 +129,24 @@ export default function Navbar({ location }: Props) {
     <>
       <nav className="shadow-lg sticky top-0 left-0 z-40 bg-white border-b border-gray-100">
         <div className="h-20 w-full flex justify-between items-center max-w-7xl px-4 mx-auto">
-          <p className="flex items-center justify-center gap-2">
-            <h2 className="text-gray-700 text-3xl font-bold tracking-tight">
+          <div className="flex items-center justify-center gap-2">
+            <h2 className="text-gray-500 dark:text-zinc-50 text-3xl font-bold tracking-tight">
               WEATHER
             </h2>
-            <ThermometerSun className="w-7 h-7 text-yellow-500" />
-          </p>
+            <SunSnow className="w-7 h-7 text-gray-500" />
+          </div>
 
           <section className="flex gap-4 items-center">
             <button
               title="Your current location"
               onClick={handleCurrentLocation}
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 focus:outline-none transition-colors shadow-md active:scale-95"
+              className="p-2 rounded-full bg-gray-500 text-white hover:bg-gray-400 focus:outline-none transition-colors shadow-md active:scale-95"
             >
-              <LocateFixed className="w-5 h-5" />
+              <LocateFixed className="w-5 h-5 " />
             </button>
 
             <div className="flex items-center gap-1">
-              <MapPin className="w-5 h-5 text-gray-500" />
+              <MapPin className="w-5 h-5 text-gray-500 hover:text-gray-400" />
               <p className="text-slate-900/80 text-lg font-medium hidden sm:block">
                 {location}
               </p>
