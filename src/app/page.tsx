@@ -16,7 +16,7 @@ import Wrapper from "../components/Wrapper";
 import IconWeather from "../components/IconWeather";
 import DetailsWeather from "../components/DetailsWeather";
 import ForecastDetail from "../components/ForecastDetail";
-import SkeletonWeather from "../components/SkeletonWeather";
+import Skeleton from "../components/Skeleton";
 
 interface DetailsWeather {
   dt: number;
@@ -95,7 +95,7 @@ export default function Home() {
     refetch();
   }, [place, refetch]);
 
-  const firstData = data?.list[0];
+  // const firstData = data?.list[0];
 
   const uniqueDates = [
     ...new Set(
@@ -105,15 +105,37 @@ export default function Home() {
     ),
   ];
 
-  const firstDataForEachDate = uniqueDates
-    .map((date) =>
-      data?.list?.find((entry: DetailsWeather) => {
-        const entryDate = new Date(entry.dt * 1000).toISOString().split("T")[0];
-        const entryTime = new Date(entry.dt * 1000).getHours();
-        return entryDate === date && entryTime >= 6;
-      })
-    )
-    .filter((d): d is DetailsWeather => !!d);
+  
+const firstDataForEachDate = uniqueDates
+  .map((date) => {
+    const dayEntries =
+      data?.list?.filter(
+        (entry) =>
+          new Date(entry.dt * 1000).toISOString().split("T")[0] === date
+      ) ?? [];
+
+    if (dayEntries.length === 0) return null;
+
+    const representativeEntry =
+      dayEntries.find((entry) => new Date(entry.dt * 1000).getHours() >= 6) ||
+      dayEntries[0];
+
+    const dailyTemps = dayEntries.map((entry) => entry.main.temp);
+    const minTemp = Math.min(...dailyTemps);
+    const maxTemp = Math.max(...dailyTemps);
+
+    return {
+      ...representativeEntry,
+      main: {
+        ...representativeEntry.main,
+        temp_min: minTemp,
+        temp_max: maxTemp,
+      },
+    } as DetailsWeather;
+  })
+  .filter((d): d is DetailsWeather => !!d);
+
+  const firstData = firstDataForEachDate[0];
 
   if (isLoading)
     return (
@@ -132,9 +154,9 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
       <Navbar location={data?.city?.name} />
-      <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
+      <main className="px-3 max-w-9xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
         {loadingCity ? (
-          <SkeletonWeather />
+          <Skeleton/>
         ) : (
           <>
             <section className="space-y-4">
