@@ -1,7 +1,7 @@
 import DetailsWeather, { DetailsWeatherProps } from "./DetailsWeather";
 import IconWeather from "./IconWeather";
 import Wrapper from "./Wrapper";
-import { convertToCelsius } from "../utils/convertToCelsius";
+import  convertToCelsius  from "../utils/convertToCelsius";
 
 export interface ForecastProps extends DetailsWeatherProps {
   weatherIcon: string;

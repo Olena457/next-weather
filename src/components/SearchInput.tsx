@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 
 type SearchBoxProps = {
-    className?: string;
+  className?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;

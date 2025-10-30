@@ -1,3 +1,7 @@
+
+
+
+
 import SingleDetail from "./SingleDetail";
 import { Eye, Sunrise, Sunset, Wind, CircleGauge, Droplet } from "lucide-react";
 
