@@ -1,7 +1,4 @@
 
-
-
-
 import SingleDetail from "./SingleDetail";
 import { Eye, Sunrise, Sunset, Wind, CircleGauge, Droplet } from "lucide-react";
 
@@ -38,12 +35,12 @@ export default function DetailsWeather(props: DetailsWeatherProps) {
       />
       <SingleDetail
         icon={<Wind />}
-        information="Wind speed"
+        information="Wind"
         value={windSpeed}
       />
       <SingleDetail
         icon={<CircleGauge />}
-        information="Air Pressure"
+        information="Pressure"
         value={airPressure}
       />
       <SingleDetail icon={<Sunrise />} information="Sunrise" value={sunrise} />

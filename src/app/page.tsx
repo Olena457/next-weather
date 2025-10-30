@@ -145,25 +145,23 @@ export default function Home() {
                     ({format(parseISO(firstData?.dt_txt ?? ""), "dd.MM.yyyy")})
                   </p>
                 </h2>
-                <Wrapper className="gap-10 px-6 items-center">
-                  <div className="flex flex-col px-4">
-                    <span className="text-5xl">
+                <Wrapper className="gap-10 px-6 items-center rounded-b-none border-none">
+                  <div className="flex flex-col gap-5 sm:gap-7 px-1 items-center justify-center  sm:px-4 pb-3">
+                    <span className="text-3xl sm:text-5xl">
                       {convertToCelsius(firstData?.main.temp ?? 296.36)}°
                     </span>
                     <p className="text-xs space-x-1 whitespace-nowrap">
-                      <span>Feels like</span>
-                      <span>
-                        {convertToCelsius(firstData?.main.feels_like ?? 0)}°
-                      </span>
+                      <span>Feels like &nbsp;</span>
+                      {convertToCelsius(firstData?.main.feels_like ?? 0)}°
                     </p>
-                    <p className="text-xs space-x-2">
+                    <div className="text-sm space-x-1 whitespace-nowrap">
                       <span>
                         {convertToCelsius(firstData?.main.temp_min ?? 0)}°↓
                       </span>
                       <span>
                         {convertToCelsius(firstData?.main.temp_max ?? 0)}°↑
                       </span>
-                    </p>
+                    </div>
                   </div>
                   <div className="flex gap-10 sm:gap-16 overflow-x-auto w-full justify-between pr-3">
                     {data?.list?.map((d, i) => (
@@ -183,8 +181,9 @@ export default function Home() {
                   </div>
                 </Wrapper>
               </div>
-              <div className="flex gap-4">
-                <Wrapper className="w-fit justify-center flex-col px-4 items-center">
+              <div className="flex ">
+                {/* icons */}
+                <Wrapper className="w-fit justify-center flex-col px-4 items-center rounded-tl-none rounded-r-none border-none">
                   <p className="capitalize text-center">
                     {firstData?.weather[0].description}
                   </p>
@@ -195,7 +194,7 @@ export default function Home() {
                     )}
                   />
                 </Wrapper>
-                <Wrapper className="bg-yellow-300/80 px-6 gap-4 justify-between overflow-x-auto">
+                <Wrapper className="bg-yellow-300/80 px-4 sm:px-8 py-4 rounded-l-none rounded-tr-none justify-between border-none">
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
                     airPressure={`${firstData?.main.pressure} hPa`}

@@ -27,37 +27,46 @@ export default function ForecastDetail(props: ForecastProps) {
   } = props;
 
   return (
-    <Wrapper className="gap-4">
-      <section>
-        <div className="flex flex-col gap-1 items-center">
-          <IconWeather iconName={weatherIcon} />
-          <p>{date}</p>
-          <p className="text-sm">{day}</p>
-        </div>
+    <>
+      <div className="flex row gap-1 pl-4">
+        <p className="text-lg">{day}</p>
+        <p className="text-lg">{date}</p>
+      </div>
 
-        <div className="flex flex-col px-4">
-          <span className="text-5xl">{convertToCelsius(temp)}°</span>
-
-          <div className="text-xs space-x-1 whitespace-nowrap">
-            <span>{convertToCelsius(feels_like)}°</span>
+      <Wrapper className="gap-4">
+        <section className=" flex gap-2 sm:gap-4  items-center  pr-1  sm:px-4 ">
+          <div className="flex flex-col gap-1  justify-center  pb-4">
+            {description && (
+              <p className="capitalize font-semibold text-gray-700 text-center">
+                {description}
+              </p>
+            )}
+            <IconWeather iconName={weatherIcon} />
           </div>
 
-          <div className="text-sm space-x-1 whitespace-nowrap">
-            <span>Min: {convertToCelsius(temp_min)}°</span>
-            <span>Max: {convertToCelsius(temp_max)}°</span>
+          <div className="flex flex-col gap-5 sm:gap-7 px-1 items-center justify-center  sm:px-4 pb-3">
+            <span className="text-3xl sm:text-5xl">
+              {convertToCelsius(temp)}°
+            </span>
+
+            <div className="text-xs space-x-1 whitespace-nowrap">
+              <span>
+                file like &nbsp;
+                {convertToCelsius(feels_like)}°
+              </span>
+            </div>
+
+            <div className="text-sm space-x-1 whitespace-nowrap">
+              <span>{convertToCelsius(temp_min)}↓°</span>&nbsp;
+              <span>{convertToCelsius(temp_max)}↑°</span>
+            </div>
           </div>
+        </section>
 
-          {description && (
-            <p className="capitalize font-semibold text-gray-700">
-              {description}
-            </p>
-          )}
-        </div>
-      </section>
-
-      <section className="overflow-x-auto flex justify-between gap-4 px-4 w-full pr-10">
-        <DetailsWeather {...props} />
-      </section>
-    </Wrapper>
+        <section className="overflow-x-auto flex justify-between gap-4 px-4 w-full pr-10">
+          <DetailsWeather {...props} />
+        </section>
+      </Wrapper>
+    </>
   );
 }
