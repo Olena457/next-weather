@@ -20,7 +20,7 @@
       color 0.5s,
       background-color 0.5s;
     line-height: 1.6;
-    color:#ffffff;
+    color:#84b6e0;
     font-size: 15px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -53,6 +53,7 @@
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
+  z-index: -1;
      }
  } 
     .glass-nav-card {
@@ -80,8 +81,9 @@
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
+  z-index: -1;
      }
-     .glass-input-card {
+     .glass-input-card-second {
   background: rgba(255, 255, 255, 0.15) ;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

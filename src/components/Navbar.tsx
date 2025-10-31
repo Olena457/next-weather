@@ -11,9 +11,7 @@ import SearchInput from "./SearchInput";
 import OptionBox from "./OptionBox";
 import { MapPin, Sun, LocateFixed } from "lucide-react";
 
-
-
-  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
 
 type Props = {
   location?: string;
@@ -22,7 +20,6 @@ type Props = {
 export default function Navbar({ location }: Props) {
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
-
   const [options, setOptions] = useState<string[]>([]);
   const [showOptions, setShowOptions] = useState(false);
 
@@ -37,14 +34,13 @@ export default function Navbar({ location }: Props) {
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/find?q=${value}&appid=${API_KEY}`
         );
-
         const newOptions = response.data.list.map(
           (item: { name: string }) => item.name
         );
         setOptions(newOptions);
         setError("");
         setShowOptions(true);
-      } catch  {
+      } catch {
         setOptions([]);
         setShowOptions(false);
         setError("Error fetching suggestions.");
@@ -75,19 +71,14 @@ export default function Navbar({ location }: Props) {
     }
 
     setLoadingCity(true);
+    setError("");
 
-    if (options.length === 0 && !searchCity) {
-      setError("Location not found.");
+    setTimeout(() => {
       setLoadingCity(false);
-    } else {
-      setError("");
-      setTimeout(() => {
-        setLoadingCity(false);
-        setPlace(cityToSearch);
-        setShowOptions(false);
-        setCity(cityToSearch);
-      }, 500);
-    }
+      setPlace(cityToSearch);
+      setShowOptions(false);
+      setCity(cityToSearch);
+    }, 500);
   }
 
   function handleCurrentLocation() {
@@ -125,12 +116,19 @@ export default function Navbar({ location }: Props) {
     }
   }
 
+  function handleClearInput() {
+    setCity("");
+    setOptions([]);
+    setShowOptions(false);
+    setError("");
+  }
+
   return (
     <>
-      <nav className="shadow-lg sticky top-0 left-0 z-40 rounded-4xl glass-nav-card">
+      <nav className="sticky top-0 left-0 z-40 rounded-4xl glass-nav-card">
         <div className="h-20 w-full flex justify-between items-center max-w-7xl px-4 mx-auto">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-blue-100 dark:text-zinc-50 text-3xl font-bold tracking-tight">
+            <h2 className="text-blue-100 text-3xl font-bold tracking-tight">
               WEATHER
             </h2>
             <Sun className="w-7 h-7 text-[#e7cc3e]" />
@@ -140,28 +138,33 @@ export default function Navbar({ location }: Props) {
             <button
               title="Your current location"
               onClick={handleCurrentLocation}
-              className="p-2 cursor-pointer rounded-full bg-blue-300 text-gray-500 hover:bg-blue-200 focus:outline-none transition-colors shadow-md active:scale-95"
+              className="p-2 cursor-pointer rounded-full bg-blue-300 text-gray-500 
+             hover:bg-blue-200 
+             shadow-md 
+             active:scale-95 
+             transition-all duration-150 ease-in-out
+             focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
             >
               <LocateFixed className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-1">
-              <MapPin className="w-5 h-5 cursor-pointer text-blue-300 hover:text-blue-200" />
-              <p className="text-blue-100 text-lg  hover:text-blue-200 font-medium hidden sm:block">
+              <MapPin className="w-5 h-5 cursor-pointer text-blue-300 hover:text-blue-200 transition-colors" />
+              <p className="text-blue-100 text-lg hover:text-blue-200 transition-colors font-medium hidden sm:block">
                 {location}
               </p>
-              <p className="text-red-700 cursor-pointer text-sm font-medium sm:hidden">
+              <p className="text-blue-100 cursor-pointer hover:text-blue-200 text-sm font-medium transition-colors sm:hidden">
                 {location?.split(",")[0]}
               </p>
             </div>
 
-            <div className="relative hidden md:flex">
+            <div className="relative hidden glass-input-card-second rounded-4xl md:flex">
               <SearchInput
                 value={city}
                 onSubmit={handleSubmitSearch}
+                onClear={handleClearInput}
                 onChange={(e) => handleInputChange(e.target.value)}
-              ></SearchInput>
-
+              />
               <OptionBox
                 showOptions={showOptions}
                 options={options}
@@ -173,10 +176,11 @@ export default function Navbar({ location }: Props) {
         </div>
       </nav>
 
-      <section className="flex justify-center w-full px-4 py-3 md:hidden bg-white shadow-md">
+      <section className="flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-4xl">
         <div className="relative w-full max-w-sm">
           <SearchInput
             value={city}
+            onClear={handleClearInput}
             onSubmit={handleSubmitSearch}
             onChange={(e) => handleInputChange(e.target.value)}
           />

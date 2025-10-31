@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useAtom } from "jotai";
 import { placeAtom, loadingCityAtom } from "../app/atom";
 import axios from "axios";
-// import Image from "next/image";
 import { format, fromUnixTime, parseISO } from "date-fns";
 import convertSpeedWind from "../utils/convertSpeedWind";
 import convertToCelsius from "../utils/convertToCelsius";
