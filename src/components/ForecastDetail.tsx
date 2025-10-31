@@ -37,7 +37,7 @@ export default function ForecastDetail(props: ForecastProps) {
         <section className=" flex gap-2 sm:gap-4  items-center  pr-1  sm:px-4 ">
           <div className="flex flex-col gap-1  justify-center  pb-4">
             {description && (
-              <p className="capitalize font-semibold text-gray-700 text-center">
+              <p className="capitalize font-semibold text-white text-center">
                 {description}
               </p>
             )}
@@ -49,9 +49,9 @@ export default function ForecastDetail(props: ForecastProps) {
               {convertToCelsius(temp)}°
             </span>
 
-            <div className="text-xs space-x-1 whitespace-nowrap">
-              <span>
-                file like &nbsp;
+            <div className="text-2xs space-x-1 whitespace-nowrap">
+              <span className=" text-blue-100">
+                feels like &nbsp;
                 {convertToCelsius(feels_like)}°
               </span>
             </div>

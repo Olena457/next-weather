@@ -95,7 +95,6 @@ export default function Home() {
     refetch();
   }, [place, refetch]);
 
-  // const firstData = data?.list[0];
 
   const uniqueDates = [
     ...new Set(
@@ -147,19 +146,25 @@ const firstDataForEachDate = uniqueDates
   if (error)
     return (
       <div className="flex items-center min-h-screen justify-center">
-        <p className="text-red-400">{error.message}</p>
+        <p className="text-red-300">{error.message}</p>
       </div>
     );
 
   return (
-    <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
+    <div
+      className="flex flex-col gap-4 min-h-screen bg-[url('/images/background.svg')] bg-repeat 
+
+    bg-contain       
+
+    bg-center "
+    >
       <Navbar location={data?.city?.name} />
       <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
         {loadingCity ? (
           <Skeleton />
         ) : (
           <>
-            <section >
+            <section className="space-y-4">
               <div className="space-y-2">
                 <h2 className="flex gap-1 text-2xl items-end">
                   <p>{format(parseISO(firstData?.dt_txt ?? ""), "EEEE")}</p>
@@ -167,7 +172,7 @@ const firstDataForEachDate = uniqueDates
                     ({format(parseISO(firstData?.dt_txt ?? ""), "dd.MM.yyyy")})
                   </p>
                 </h2>
-                <Wrapper className="gap-10 px-6 items-center rounded-b-none border-none">
+                <Wrapper className="gap-10 px-6 items-center  border-none">
                   <div className="flex flex-col gap-5 sm:gap-7 px-1 items-center justify-center  sm:px-4 pb-3">
                     <span className="text-3xl sm:text-5xl">
                       {convertToCelsius(firstData?.main.temp ?? 296.36)}°
@@ -205,7 +210,8 @@ const firstDataForEachDate = uniqueDates
               </div>
               <div className="flex ">
                 {/* icons */}
-                <Wrapper className="w-fit justify-center flex-col px-4 items-center rounded-tl-none rounded-r-none border-none">
+                <Wrapper className=" flex overflow-x-auto px-4 sm:px-8 py-4  gap-x-9 sm:justify-between border-none">
+                  <div className="w-fit justify-center flex-col px-4 items-center  border-none">
                   <p className="capitalize text-center">
                     {firstData?.weather[0].description}
                   </p>
@@ -215,8 +221,7 @@ const firstDataForEachDate = uniqueDates
                       firstData?.dt_txt ?? ""
                     )}
                   />
-                </Wrapper>
-                <Wrapper className="bg-yellow-300/80 flex overflow-x-auto px-4 sm:px-8 py-4 rounded-l-none rounded-tr-none gap-x-9 sm:justify-between border-none">
+                  </div>
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
                     airPressure={`${firstData?.main.pressure} hPa`}

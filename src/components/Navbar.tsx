@@ -9,7 +9,7 @@ import { useAtom } from "jotai";
 import { placeAtom, loadingCityAtom } from "../app/atom";
 import SearchInput from "./SearchInput";
 import OptionBox from "./OptionBox";
-import { MapPin, SunSnow, LocateFixed } from "lucide-react";
+import { MapPin, Sun, LocateFixed } from "lucide-react";
 
 
 
@@ -127,30 +127,30 @@ export default function Navbar({ location }: Props) {
 
   return (
     <>
-      <nav className="shadow-lg sticky top-0 left-0 z-40 bg-white border-b border-gray-100">
+      <nav className="shadow-lg sticky top-0 left-0 z-40 rounded-4xl glass-nav-card">
         <div className="h-20 w-full flex justify-between items-center max-w-7xl px-4 mx-auto">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-gray-500 dark:text-zinc-50 text-3xl font-bold tracking-tight">
+            <h2 className="text-blue-100 dark:text-zinc-50 text-3xl font-bold tracking-tight">
               WEATHER
             </h2>
-            <SunSnow className="w-7 h-7 text-gray-500" />
+            <Sun className="w-7 h-7 text-[#e7cc3e]" />
           </div>
 
           <section className="flex gap-4 items-center">
             <button
               title="Your current location"
               onClick={handleCurrentLocation}
-              className="p-2 rounded-full bg-gray-500 text-white hover:bg-gray-400 focus:outline-none transition-colors shadow-md active:scale-95"
+              className="p-2 cursor-pointer rounded-full bg-blue-300 text-gray-500 hover:bg-blue-200 focus:outline-none transition-colors shadow-md active:scale-95"
             >
-              <LocateFixed className="w-5 h-5 " />
+              <LocateFixed className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-1">
-              <MapPin className="w-5 h-5 text-gray-500 hover:text-gray-400" />
-              <p className="text-slate-900/80 text-lg font-medium hidden sm:block">
+              <MapPin className="w-5 h-5 cursor-pointer text-blue-300 hover:text-blue-200" />
+              <p className="text-blue-100 text-lg  hover:text-blue-200 font-medium hidden sm:block">
                 {location}
               </p>
-              <p className="text-slate-900/80 text-sm font-medium sm:hidden">
+              <p className="text-red-700 cursor-pointer text-sm font-medium sm:hidden">
                 {location?.split(",")[0]}
               </p>
             </div>
