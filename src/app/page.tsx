@@ -145,7 +145,7 @@ const firstDataForEachDate = uniqueDates
   if (error)
     return (
       <div className="flex items-center min-h-screen justify-center">
-        <p className="text-red-300">{error.message}</p>
+        <p className="text-red-400">{error.message}</p>
       </div>
     );
 
@@ -239,7 +239,7 @@ const firstDataForEachDate = uniqueDates
               </div>
             </section>
             <section className="flex w-full flex-col gap-4">
-              <p className="text-2xl">Forecast (7 days)</p>
+              <p className="text-2xl">Forecast: 7 days</p>
               {firstDataForEachDate.map((d, i) => (
                 <ForecastDetail
                   key={i}
