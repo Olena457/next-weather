@@ -154,12 +154,12 @@ const firstDataForEachDate = uniqueDates
   return (
     <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
       <Navbar location={data?.city?.name} />
-      <main className="px-3 max-w-9xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
+      <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
         {loadingCity ? (
-          <Skeleton/>
+          <Skeleton />
         ) : (
           <>
-            <section className="space-y-4">
+            <section >
               <div className="space-y-2">
                 <h2 className="flex gap-1 text-2xl items-end">
                   <p>{format(parseISO(firstData?.dt_txt ?? ""), "EEEE")}</p>
@@ -216,7 +216,7 @@ const firstDataForEachDate = uniqueDates
                     )}
                   />
                 </Wrapper>
-                <Wrapper className="bg-yellow-300/80 px-4 sm:px-8 py-4 rounded-l-none rounded-tr-none justify-between border-none">
+                <Wrapper className="bg-yellow-300/80 flex overflow-x-auto px-4 sm:px-8 py-4 rounded-l-none rounded-tr-none gap-x-9 sm:justify-between border-none">
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
                     airPressure={`${firstData?.main.pressure} hPa`}

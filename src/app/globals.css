@@ -8,14 +8,7 @@
   --text-black: #2c2c2c2c;
   --background-primary: #f3743d;
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    font-weight: normal;
-  }
-
+ 
   body {
     min-height: 100vh;
     background-color: #f3743d;
@@ -29,8 +22,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-   @layer utilities {
+}   
+   /* @layer utilities {
     .primary {
       background-color: #f3743d;
     }
@@ -53,4 +46,4 @@
       height: 100vh;
     }
   }
-}
+} */
