@@ -81,4 +81,10 @@
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
      }
+     .glass-input-card {
+  background: rgba(255, 255, 255, 0.15) ;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
  } 
+}
