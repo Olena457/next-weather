@@ -1,12 +1,18 @@
-'use client'
 
-import { useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+"use client";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
-  const [queryClient] = useState(() => new QueryClient());
+import { Provider as JotaiProvider } from 'jotai';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+const queryClient = new QueryClient();
+
+export default function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <JotaiProvider>
+        {children}
+      </JotaiProvider>
+    </QueryClientProvider>
   );
 }
+export { ClientProviders }; 

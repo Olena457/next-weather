@@ -1,7 +1,7 @@
-'use client'
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Providers from './providers';
+import { ClientProviders } from "./providers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,17 +26,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <Providers>
+      <ClientProviders>
         <body
           className={`antialiased bg-[url('/images/body.svg')] bg-no-repeat 
-
-     bg-cover       
-
-     bg-center `}
+ bg-cover 
+  bg-center `}
         >
-          {children}
+{children}
         </body>
-      </Providers>
+      </ClientProviders>
     </html>
   );
 }
