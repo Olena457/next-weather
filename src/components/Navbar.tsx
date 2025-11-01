@@ -128,10 +128,10 @@ export default function Navbar({ location }: Props) {
       <nav className="sticky top-0 left-0 z-40 rounded-4xl glass-nav-card">
         <div className="h-20 w-full flex justify-between items-center max-w-7xl px-4 mx-auto">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-blue-100 text-3xl font-bold tracking-tight">
+            <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
               WEATHER
             </h2>
-            <Sun className="w-7 h-7 text-[#e7cc3e]" />
+            <Sun className="w-7 h-7 text-[#fda326]" />
           </div>
 
           <section className="flex gap-4 items-center">
@@ -150,7 +150,7 @@ export default function Navbar({ location }: Props) {
 
             <div className="flex items-center gap-1">
               <MapPin className="w-5 h-5 cursor-pointer text-blue-300 hover:text-blue-200 transition-colors" />
-              <p className="text-blue-100 text-lg hover:text-blue-200 transition-colors font-medium hidden sm:block">
+              <p className="text-white text-lg hover:text-blue-200 transition-colors font-medium hidden sm:block truncate whitespace-nowrap max-w-20">
                 {location}
               </p>
               <p className="text-blue-100 cursor-pointer hover:text-blue-200 text-sm font-medium transition-colors sm:hidden">

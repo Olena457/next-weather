@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useAtom } from "jotai";
 import { placeAtom, loadingCityAtom } from "../app/atom";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { format, fromUnixTime, parseISO } from "date-fns";
 import convertSpeedWind from "../utils/convertSpeedWind";
 import convertToCelsius from "../utils/convertToCelsius";
 import metersConvert from "../utils/metersConvert";
 import dayOrNightIcon from "../utils/dayOrNightIcon";
 import Navbar from "../components/Navbar";
+import NotFound from "../components/NotFound";
 import Wrapper from "../components/Wrapper";
 import IconWeather from "../components/IconWeather";
 import DetailsWeather from "../components/DetailsWeather";
@@ -94,7 +95,6 @@ export default function Home() {
     refetch();
   }, [place, refetch]);
 
-
   const uniqueDates = [
     ...new Set(
       data?.list?.map(
@@ -103,80 +103,100 @@ export default function Home() {
     ),
   ];
 
-  
-const firstDataForEachDate = uniqueDates
-  .map((date) => {
-    const dayEntries =
-      data?.list?.filter(
-        (entry) =>
-          new Date(entry.dt * 1000).toISOString().split("T")[0] === date
-      ) ?? [];
+  const firstDataForEachDate = uniqueDates
+    .map((date) => {
+      const dayEntries =
+        data?.list?.filter(
+          (entry) =>
+            new Date(entry.dt * 1000).toISOString().split("T")[0] === date
+        ) ?? [];
 
-    if (dayEntries.length === 0) return null;
+      if (dayEntries.length === 0) return null;
 
-    const representativeEntry =
-      dayEntries.find((entry) => new Date(entry.dt * 1000).getHours() >= 6) ||
-      dayEntries[0];
+      const representativeEntry =
+        dayEntries.find((entry) => new Date(entry.dt * 1000).getHours() >= 6) ||
+        dayEntries[0];
 
-    const dailyTemps = dayEntries.map((entry) => entry.main.temp);
-    const minTemp = Math.min(...dailyTemps);
-    const maxTemp = Math.max(...dailyTemps);
+      const dailyTemps = dayEntries.map((entry) => entry.main.temp);
+      const minTemp = Math.min(...dailyTemps);
+      const maxTemp = Math.max(...dailyTemps);
 
-    return {
-      ...representativeEntry,
-      main: {
-        ...representativeEntry.main,
-        temp_min: minTemp,
-        temp_max: maxTemp,
-      },
-    } as DetailsWeather;
-  })
-  .filter((d): d is DetailsWeather => !!d);
+      return {
+        ...representativeEntry,
+        main: {
+          ...representativeEntry.main,
+          temp_min: minTemp,
+          temp_max: maxTemp,
+        },
+      } as DetailsWeather;
+    })
+    .filter((d): d is DetailsWeather => !!d);
 
   const firstData = firstDataForEachDate[0];
 
   if (isLoading)
     return (
       <div className="flex items-center min-h-screen justify-center">
-        <p className="animate-bounce">Loading...</p>
+        <p className="animate-bounce text-white text-3xl font-bold tracking-tight">
+          Weather Loading...
+        </p>
       </div>
     );
 
-  if (error)
+  if (error) {
+    const axiosError = error as AxiosError;
+    const statusCode = axiosError.response?.status;
+
+    if (statusCode === 404) {
+      return (
+        <div className="flex items-center min-h-screen justify-center">
+      <NotFound />
+        </div>
+      );
+    }
+
     return (
       <div className="flex items-center min-h-screen justify-center">
-        <p className="text-red-400">{error.message}</p>
+      <p className="text-red-400">Error: {error.message}</p>
       </div>
     );
+  }
+
+  if (data?.list?.length === 0) {
+    return (
+      <div className="flex items-center min-h-screen justify-center">
+    <NotFound />
+      </div>
+    );
+  }
 
   return (
     <div
       className="flex flex-col gap-4 min-h-screen bg-[url('/images/background.svg')] bg-repeat 
-
-    bg-contain       
-
-    bg-center "
+ bg-contain 
+bg-center "
     >
       <Navbar location={data?.city?.name} />
-      <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
+      <main className="px-3 max-w-7xl mx-auto flex flex-col gap-2 w-full pb-10 pt-4">
         {loadingCity ? (
           <Skeleton />
         ) : (
           <>
-            <section className="space-y-4">
+            <section>
               <div className="space-y-2">
                 <h2 className="flex gap-1 text-2xl items-end">
                   <p>{format(parseISO(firstData?.dt_txt ?? ""), "EEEE")}</p>
                   <p className="text-lg">
-                    ({format(parseISO(firstData?.dt_txt ?? ""), "dd.MM.yyyy")})
+                    ({format(parseISO(firstData?.dt_txt ?? ""), "dd.MM.yyyy")} )
                   </p>
                 </h2>
+
                 <Wrapper className="gap-10 px-6 items-center  border-none">
                   <div className="flex flex-col gap-5 sm:gap-7 px-1 items-center justify-center  sm:px-4 pb-3">
                     <span className="text-3xl sm:text-5xl">
                       {convertToCelsius(firstData?.main.temp ?? 296.36)}°
                     </span>
-                    <p className="text-xs space-x-1 whitespace-nowrap">
+                    <p className="text-2xs space-x-1 whitespace-nowrap">
                       <span>Feels like &nbsp;</span>
                       {convertToCelsius(firstData?.main.feels_like ?? 0)}°
                     </p>
@@ -189,6 +209,7 @@ const firstDataForEachDate = uniqueDates
                       </span>
                     </div>
                   </div>
+
                   <div className="flex gap-10 sm:gap-16 overflow-x-auto w-full justify-between pr-3">
                     {data?.list?.map((d, i) => (
                       <div
@@ -207,20 +228,23 @@ const firstDataForEachDate = uniqueDates
                   </div>
                 </Wrapper>
               </div>
-              <div className="flex ">
-                {/* icons */}
-                <Wrapper className=" flex overflow-x-auto px-4 sm:px-8 py-4  gap-x-9 sm:justify-between border-none">
-                  <div className="w-fit justify-center flex-col px-4 items-center  border-none">
-                  <p className="capitalize text-center">
-                    {firstData?.weather[0].description}
-                  </p>
-                  <IconWeather
-                    iconName={dayOrNightIcon(
-                      firstData?.weather[0].icon ?? "",
-                      firstData?.dt_txt ?? ""
-                    )}
-                  />
-                  </div>
+            </section>
+            {/* __________________ */}
+
+            <div className="flex w-full min-w-0">
+              <Wrapper className="flex w-fit px-4 sm:px-8 py-4 mr-2 justify-center flex-col  items-center ">
+                <p className="capitalize text-center">
+                  {firstData?.weather[0].description}
+                </p>
+                <IconWeather
+                  iconName={dayOrNightIcon(
+                    firstData?.weather[0].icon ?? "",
+                    firstData?.dt_txt ?? ""
+                  )}
+                />
+              </Wrapper>
+              <Wrapper className="flex w-full overflow-x-auto  py-4  ">
+                <div className="min-w-max flex px-4  sm:px-8 gap-x-9">
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
                     airPressure={`${firstData?.main.pressure} hPa`}
@@ -235,9 +259,12 @@ const firstDataForEachDate = uniqueDates
                     )}
                     windSpeed={convertSpeedWind(firstData?.wind.speed ?? 1.64)}
                   />
-                </Wrapper>
-              </div>
-            </section>
+                </div>
+              </Wrapper>
+            </div>
+
+            {/* ___________ */}
+
             <section className="flex w-full flex-col gap-4">
               <p className="text-2xl">Forecast: 7 days</p>
               {firstDataForEachDate.map((d, i) => (

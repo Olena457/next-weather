@@ -21,24 +21,20 @@
             <rect width="1440" height="560" x="0" y="0"></rect>
         </clipPath>
         <linearGradient x1="1260.72" y1="304.93" x2="1260.72" y2="430.71000000000004" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8096">
-            <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="rgba(233, 220, 10, 1)" offset="0.9"></stop>
-        </linearGradient>
-        <linearGradient x1="417" y1="33.17999999999999" x2="417" y2="197.64" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8097">
-            <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="rgba(233, 220, 10, 1)" offset="0.9"></stop>
-        </linearGradient>
-        <linearGradient x1="174.23000000000002" y1="465.6" x2="367.65" y2="465.6" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8098">
             <stop stop-color="#32325d" offset="0.1"></stop>
             <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
         </linearGradient>
-        <linearGradient x1="1429.48" y1="224.02999999999997" x2="1429.48" y2="319.89" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8099">
-            <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="rgba(233, 220, 10, 1)" offset="0.9"></stop>
+        <linearGradient x1="417" y1="33.17999999999999" x2="417" y2="197.64" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8097">
+             <stop stop-color="#e298de" offset="0.1"></stop>
+            <stop stop-color="#484687" offset="0.9"></stop>
         </linearGradient>
-        <linearGradient x1="105.32" y1="426.25" x2="222.86" y2="426.25" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8100">
-            <stop stop-color="#84b6e0" offset="0.1"></stop>
-            <stop stop-color="#464a8f" offset="0.9"></stop>
+        <linearGradient x1="174.23000000000002" y1="465.6" x2="367.65" y2="465.6" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8098">
+           <stop stop-color="#32325d" offset="0.1"></stop>
+            <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
+        </linearGradient>
+        <linearGradient x1="1429.48" y1="224.02999999999997" x2="1429.48" y2="319.89" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8099">
+            <stop stop-color="#32325d" offset="0.1"></stop>
+            <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
         </linearGradient>
         <linearGradient x1="762.98" y1="139.02" x2="899.78" y2="139.02" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8101">
             <stop stop-color="#32325d" offset="0.1"></stop>
@@ -46,35 +42,15 @@
         </linearGradient>
         <linearGradient x1="760.8700000000001" y1="164.33999999999997" x2="760.8700000000001" y2="381.71999999999997" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8102">
             <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="rgba(233, 220, 10, 1)" offset="0.9"></stop>
-        </linearGradient>
-        <linearGradient x1="1211.98" y1="175.42000000000002" x2="1211.98" y2="268.26" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8103">
-            <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="rgba(233, 220, 10, 1)" offset="0.9"></stop>
-        </linearGradient>
-        <linearGradient x1="255.48999999999998" y1="345.47" x2="350.40999999999997" y2="345.47" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8104">
-            <stop stop-color="#ab3c51" offset="0.1"></stop>
-            <stop stop-color="rgba(68, 104, 132, 1)" offset="0.9"></stop>
-        </linearGradient>
+            <stop stop-color="#484687" offset="0.9"></stop>
+        </linearGradient> 
         <linearGradient x1="409.71" y1="79.6" x2="522.0699999999999" y2="79.6" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8105">
             <stop stop-color="#32325d" offset="0.1"></stop>
             <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
         </linearGradient>
-        <linearGradient x1="363.9" y1="131.37" x2="363.9" y2="199.82999999999998" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8106">
-            <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="rgba(233, 220, 10, 1)" offset="0.9"></stop>
-        </linearGradient>
-        <linearGradient x1="945.64" y1="309.55" x2="1090.82" y2="309.55" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8107">
-            <stop stop-color="#32325d" offset="0.1"></stop>
-            <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
-        </linearGradient>
-        <linearGradient x1="880.41" y1="96.05" x2="954.3299999999999" y2="96.05" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8108">
-            <stop stop-color="#32325d" offset="0.1"></stop>
-            <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
-        </linearGradient>
         <linearGradient x1="98.24" y1="78.96" x2="256.14" y2="78.96" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8109">
-            <stop stop-color="#ab3c51" offset="0.1"></stop>
-            <stop stop-color="rgba(68, 104, 132, 1)" offset="0.9"></stop>
+            <stop stop-color="#e298de" offset="0.1"></stop>
+            <stop stop-color="#484687" offset="0.9"></stop>
         </linearGradient>
     </defs>
 </svg>
