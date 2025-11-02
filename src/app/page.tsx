@@ -244,7 +244,14 @@ bg-center "
                 />
               </Wrapper>
               <Wrapper className="flex w-full overflow-x-auto  py-4  ">
-                <div className="min-w-max flex px-4  sm:px-8 gap-x-9">
+                <div
+                  className="min-w-max flex px-4 sm:px-8 gap-x-9
+                        md:min-w-0 
+                        md:w-full 
+                        md:justify-around 
+                        md:px-8 
+                        md:gap-x-0"
+                >
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
                     airPressure={`${firstData?.main.pressure} hPa`}

@@ -48,9 +48,5 @@
             <stop stop-color="#32325d" offset="0.1"></stop>
             <stop stop-color="rgba(74, 161, 230, 1)" offset="0.9"></stop>
         </linearGradient>
-        <linearGradient x1="98.24" y1="78.96" x2="256.14" y2="78.96" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient8109">
-            <stop stop-color="#e298de" offset="0.1"></stop>
-            <stop stop-color="#484687" offset="0.9"></stop>
-        </linearGradient>
     </defs>
 </svg>
