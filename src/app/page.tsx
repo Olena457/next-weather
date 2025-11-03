@@ -177,14 +177,14 @@ export default function Home() {
 bg-center "
     >
       <Navbar location={data?.city?.name} />
-      <main className="px-3 max-w-7xl mx-auto flex flex-col gap-2 w-full pb-10 pt-4">
+      <main className="px-3 max-w-7xl mx-auto flex flex-col gap-2 w-full pb-10 pt-0">
         {loadingCity ? (
           <Skeleton />
         ) : (
           <>
             <section>
               <div className="space-y-2">
-                <h2 className="flex gap-1 text-2xl items-end">
+                <h2 className="flex gap-1 ml-2 text-2xl items-end">
                   <p>{format(parseISO(firstData?.dt_txt ?? ""), "EEEE")}</p>
                   <p className="text-lg">
                     ({format(parseISO(firstData?.dt_txt ?? ""), "dd.MM.yyyy")} )
@@ -243,22 +243,14 @@ bg-center "
                   )}
                 />
               </Wrapper>
-              {/* <Wrapper className="flex w-full overflow-x-auto py-4">
+              <Wrapper className="flex w-full overflow-x-auto  py-4  ">
                 <div
-                  className="min-w-max flex px-4 sm:px-8 gap-x-9 
+                  className="min-w-max flex px-4  gap-x-9
                         md:min-w-0 
                         md:w-full 
                         md:justify-around 
-                        md:px-8 
+                      
                         md:gap-x-0"
-                > */}
-              <Wrapper className="flex w-full overflow-x-auto px-4 sm:px-8 py-4">
-                <div
-                  className="flex 
-             w-[300px] sm:w-[400px] 
-             px-4 sm:px-8 gap-x-9
-             md:min-w-0 md:w-full 
-             md:justify-around md:px-8 md:gap-x-0"
                 >
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
@@ -280,7 +272,7 @@ bg-center "
             {/* ___________ */}
 
             <section className="flex w-full flex-col gap-4">
-              <p className="text-2xl">Forecast : &nbsp; 7 days</p>
+              <p className="text-2xl ml-2">Forecast : &nbsp; 7 days</p>
               {firstDataForEachDate.map((d, i) => (
                 <ForecastDetail
                   key={i}

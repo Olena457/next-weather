@@ -15,23 +15,25 @@ export default function SearchInput(props: SearchBoxProps) {
   return (
     <form
       onSubmit={props.onSubmit}
-      className={`flex items-center glass-input-card rounded-4xl px-3 py-2 w-full relative ${props.className}`}
+      className={`flex items-center rounded-xl  m-auto  px-2 md:px-3 py-2 w-full relative ${props.className}`}
     >
       <input
         type="text"
         value={props.value}
         onChange={props.onChange}
         placeholder="Search location.."
-        className={`
+        className="
+         flex
           grow
-          rounded-l-4xl
+          items-center
+          rounded-l-2xl
           px-4 py-2.5 
           border border-blue-300 
           text-white 
           focus:outline-none 
           focus:border-white
           h-full
-        `}
+        "
       />
 
       {isValuePresent && (
@@ -45,7 +47,7 @@ export default function SearchInput(props: SearchBoxProps) {
         </button>
       )}
 
-      <button className="px-4 py-[9px] bg-blue-300 text-blue-100 rounded-r-4xl cursor-pointer focus:outline-none hover:bg-blue-200 transition-all duration-150 h-full">
+      <button className="px-4 py-[9px] bg-blue-300 text-blue-100 rounded-r-2xl cursor-pointer focus:outline-none hover:bg-blue-200 transition-all duration-150 h-full">
         <Search className="text-gray-500" />
       </button>
     </form>

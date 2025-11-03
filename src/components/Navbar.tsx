@@ -125,7 +125,7 @@ export default function Navbar({ location }: Props) {
 
   return (
     <>
-      <nav className="sticky top-0 left-0 z-40 rounded-4xl glass-nav-card">
+      <nav className="sticky top-0 left-0 z-40 mx-2 mt-2 rounded-3xl glass-nav-card">
         <div className="h-20 w-full flex justify-between items-center max-w-7xl px-4 mx-auto">
           <div className="flex items-center justify-center gap-2">
             <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
@@ -175,23 +175,24 @@ export default function Navbar({ location }: Props) {
           </section>
         </div>
       </nav>
-
-      <section className="flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-4xl">
-        <div className="relative w-full max-w-sm">
-          <SearchInput
-            value={city}
-            onClear={handleClearInput}
-            onSubmit={handleSubmitSearch}
-            onChange={(e) => handleInputChange(e.target.value)}
-          />
-          <OptionBox
-            showOptions={showOptions}
-            options={options}
-            handleOptionClick={handleOptionClick}
-            error={error}
-          />
-        </div>
-      </section>
+      <div className="mx-2">
+        <section className="flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-3xl">
+          <div className="relative w-full  max-w-sm">
+            <SearchInput
+              value={city}
+              onClear={handleClearInput}
+              onSubmit={handleSubmitSearch}
+              onChange={(e) => handleInputChange(e.target.value)}
+            />
+            <OptionBox
+              showOptions={showOptions}
+              options={options}
+              handleOptionClick={handleOptionClick}
+              error={error}
+            />
+          </div>
+        </section>
+      </div>
     </>
   );
 }
