@@ -43,28 +43,24 @@
   @layer {
     .glass-border-card {
       background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+     backdrop-filter: blur(10px);
       position: relative;
     }
 
-    @media (min-width: 768px) {
-      .glass-border-card::before {
-        opacity: 1;
-      }
-    }
+   
     .glass-nav-card {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       position: relative;
     }
 
     .glass-input-card-second {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       position: relative;
+    }
+    .padding-add {
+      padding:0 20px 0 20px;
     }
   }
 }

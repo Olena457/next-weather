@@ -243,14 +243,22 @@ bg-center "
                   )}
                 />
               </Wrapper>
-              <Wrapper className="flex w-full overflow-x-auto  py-4  ">
+              {/* <Wrapper className="flex w-full overflow-x-auto py-4">
                 <div
-                  className="min-w-max flex px-4 sm:px-8 gap-x-9
+                  className="min-w-max flex px-4 sm:px-8 gap-x-9 
                         md:min-w-0 
                         md:w-full 
                         md:justify-around 
                         md:px-8 
                         md:gap-x-0"
+                > */}
+              <Wrapper className="flex w-full overflow-x-auto px-4 sm:px-8 py-4">
+                <div
+                  className="flex 
+             w-[300px] sm:w-[400px] 
+             px-4 sm:px-8 gap-x-9
+             md:min-w-0 md:w-full 
+             md:justify-around md:px-8 md:gap-x-0"
                 >
                   <DetailsWeather
                     visibility={metersConvert(firstData?.visibility ?? 10000)}
@@ -269,11 +277,10 @@ bg-center "
                 </div>
               </Wrapper>
             </div>
-
             {/* ___________ */}
 
             <section className="flex w-full flex-col gap-4">
-              <p className="text-2xl">Forecast: 7 days</p>
+              <p className="text-2xl">Forecast : &nbsp; 7 days</p>
               {firstDataForEachDate.map((d, i) => (
                 <ForecastDetail
                   key={i}
