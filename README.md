@@ -2,6 +2,23 @@
 # WEATHER APP
 
 
+## 🌦️ Weather Forecast — A User-Friendly Application
+
+This application was created to make it easy for users to check the weather forecast.
+
+### 🌤️ Key Features:
+- **Detailed forecast for the current day** — includes temperature, wind speed, humidity, pressure, and other parameters.
+- **Approximate forecast for the next 7 days** — helps users plan trips, outdoor activities, or daily routines.
+- **Flexible location search** — provides weather data for any city or location worldwide.
+
+### 🌥️ Purpose:
+To deliver fast, accurate, and convenient access to weather information for everyday use.
+
+---
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
