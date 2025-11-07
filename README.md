@@ -1,20 +1,58 @@
 
 # WEATHER APP
 
+---
 
-## 🌦️ Weather Forecast — A User-Friendly Application
+## 🌦️ Weather Forecast - A User-Friendly Application
 
 This application was created to make it easy for users to check the weather forecast.
 
 ### 🌤️ Key Features:
-- **Detailed forecast for the current day** — includes temperature, wind speed, humidity, pressure, and other parameters.
-- **Approximate forecast for the next 7 days** — helps users plan trips, outdoor activities, or daily routines.
-- **Flexible location search** — provides weather data for any city or location worldwide.
+- **Detailed forecast for the current day** - includes temperature, wind speed, humidity, pressure, and other parameters.
+- **Approximate forecast for the next 7 days** - helps users plan trips, outdoor activities, or daily routines.
+- **Flexible location search** - provides weather data for any city or location worldwide.
+
+### 📱 Responsive Design:
+- **Fully optimized for mobile, tablet, and desktop screens.**
+- The interface adapts seamlessly to different resolutions, ensuring a smooth user experience on any device.
+
 
 ### 🌥️ Purpose:
-To deliver fast, accurate, and convenient access to weather information for everyday use.
+- **To deliver fast, accurate, and convenient access to weather information for everyday use.**
 
 ---
+
+## 🖼️ Screenshot
+
+<div style="text-align: center">
+  <img src="./public/images/preview.jpg" alt="app" width="600"/>
+  </div>
+> *Example of the main interface showing current and weekly forecast.*
+
+---
+
+## 🛠️ Technologies Used
+
+| Category            | Technologies                                                                 |
+|---------------------|------------------------------------------------------------------------------|
+| **Framework**        | Next.js 16                                                                   |
+| **Language**         | TypeScript                                                                   |
+| **UI & Styling**     | Tailwind CSS 4, clsx, tailwind-merge                                         |
+| **State Management** | Jotai, React Query (@tanstack/react-query)                                   |
+| **HTTP Client**      | Axios                                                                        |
+| **Date Handling**    | date-fns                                                                     |
+| **Icons**            | lucide-react                                                                 |
+| **Linting & Types**  | ESLint, @types/react, @types/node                                            |
+
+---
+
+## 🚀 Getting Started
+
+To run the project locally:
+
+```bash
+npm install
+npm run dev
 
 
 
