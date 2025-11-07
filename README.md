@@ -27,7 +27,8 @@ This application was created to make it easy for users to check the weather fore
 <div style="text-align: center">
   <img src="./public/images/preview.jpg" alt="app" width="600"/>
   </div>
-> *Example of the main interface showing current and weekly forecast.*
+
+- **Example of the main interface showing current and weekly forecast.**
 
 ---
 
