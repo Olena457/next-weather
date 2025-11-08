@@ -1,28 +1,32 @@
 
-# WEATHER APP
+# 🌤️ WEATHER APP
 
 ---
 
-## 🌦️ Weather Forecast - A User-Friendly Application
+## Weather Forecast:
+- **This application was created to make it easy for users to check the weather forecast.**
 
-This application was created to make it easy for users to check the weather forecast.
+---
 
-### 🌤️ Key Features:
+### Key Features:
 - **Detailed forecast for the current day** - includes temperature, wind speed, humidity, pressure, and other parameters.
 - **Approximate forecast for the next 7 days** - helps users plan trips, outdoor activities, or daily routines.
 - **Flexible location search** - provides weather data for any city or location worldwide.
 
-### 📱 Responsive Design:
+---
+
+### Responsive Design:
 - **Fully optimized for mobile, tablet, and desktop screens.**
-- The interface adapts seamlessly to different resolutions, ensuring a smooth user experience on any device.
+- **The interface adapts seamlessly to different resolutions, ensuring a smooth user experience on any device.**
 
+---
 
-### 🌥️ Purpose:
+### Purpose:
 - **To deliver fast, accurate, and convenient access to weather information for everyday use.**
 
 ---
 
-## 🖼️ Screenshot
+## Screenshot:
 
 <div style="text-align: center">
   <img src="./public/images/preview.jpg" alt="app" width="600"/>
@@ -32,7 +36,7 @@ This application was created to make it easy for users to check the weather fore
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Category            | Technologies                                                                 |
 |---------------------|------------------------------------------------------------------------------|
@@ -56,11 +60,9 @@ npm install
 npm run dev
 
 
-
-
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+
 
 First, run the development server:
 
