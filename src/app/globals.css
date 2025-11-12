@@ -62,9 +62,7 @@
     .padding-add {
       padding: 0 20px 0 20px;
     }
-    .force-dropdown {
-    z-index: 9999 !important; 
-}
+    
     .my-gradient {
       background: #000046;
       background: -webkit-linear-gradient(to right, #4286f4, #373b44);
