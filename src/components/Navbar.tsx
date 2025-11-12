@@ -128,7 +128,7 @@ export default function Navbar({ location }: Props) {
       <nav className="sticky top-0 left-0 z-40 mx-2 mt-2 rounded-3xl glass-nav-card">
         <div className="h-20 w-full flex justify-between items-center max-w-7xl px-4 mx-auto">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
+            <h2 className="text-white my-title text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
               WEATHER
             </h2>
             <Sun className="w-7 h-7 text-[#fda326]" />
@@ -138,8 +138,8 @@ export default function Navbar({ location }: Props) {
             <button
               title="Your current location"
               onClick={handleCurrentLocation}
-              className="p-2 cursor-pointer rounded-full bg-blue-300 text-gray-500 
-             hover:bg-blue-200 
+              className="p-2 cursor-pointer rounded-full bg-blue-200 text-gray-500 
+             hover:bg-[#1cb5e0] 
              shadow-md 
              active:scale-95 
              transition-all duration-150 ease-in-out
@@ -149,11 +149,11 @@ export default function Navbar({ location }: Props) {
             </button>
 
             <div className="flex items-center gap-1">
-              <MapPin className="w-5 h-5 cursor-pointer text-blue-300 hover:text-blue-200 transition-colors" />
-              <p className="text-white text-lg hover:text-blue-200 transition-colors font-medium hidden sm:block truncate whitespace-nowrap max-w-20">
+              <MapPin className="w-5 h-5 cursor-pointer text-blue-200 hover:text-[#1cb5e0] transition-colors" />
+              <p className="text-white text-lg hover:text-[#1cb5e0] transition-colors font-medium hidden sm:block truncate whitespace-nowrap max-w-20">
                 {location}
               </p>
-              <p className="text-blue-100 cursor-pointer hover:text-blue-200 text-sm font-medium transition-colors sm:hidden">
+              <p className="text-blue-100 cursor-pointer hover:text-[#1cb5e0] text-sm font-medium transition-colors sm:hidden">
                 {location?.split(",")[0]}
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function Navbar({ location }: Props) {
         </div>
       </nav>
       <div className="mx-2">
-        <section className="flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-3xl">
+        <section className=" flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-3xl">
           <div className="relative w-full  max-w-sm">
             <SearchInput
               value={city}

@@ -28,7 +28,7 @@ export default function SearchInput(props: SearchBoxProps) {
           items-center
           rounded-l-2xl
           px-4 py-2.5 
-          border border-blue-300 
+          border border-blue-200 
           text-white 
           focus:outline-none 
           focus:border-white
@@ -47,7 +47,7 @@ export default function SearchInput(props: SearchBoxProps) {
         </button>
       )}
 
-      <button className="px-4 py-[9px] bg-blue-300 text-blue-100 rounded-r-2xl cursor-pointer focus:outline-none hover:bg-blue-200 transition-all duration-150 h-full">
+      <button className="px-4 py-[9px] bg-blue-200 text-blue-100 rounded-r-2xl cursor-pointer focus:outline-none hover:bg-[#1cb5e0] transition-all duration-150 h-full">
         <Search className="text-gray-500" />
       </button>
     </form>

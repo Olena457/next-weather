@@ -172,9 +172,9 @@ export default function Home() {
 
   return (
     <div
-      className="flex flex-col gap-4 min-h-screen bg-[url('/images/background.svg')] bg-repeat 
- bg-contain 
-bg-center "
+      className="flex flex-col gap-4 min-h-screen my-gradient
+
+ "
     >
       <Navbar location={data?.city?.name} />
       <main className="px-3 max-w-7xl mx-auto flex flex-col gap-2 w-full pb-10 pt-0">
