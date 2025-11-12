@@ -137,7 +137,7 @@ export default function Home() {
   if (isLoading)
     return (
       <div className="flex items-center min-h-screen justify-center">
-        <p className="animate-bounce text-white text-3xl font-bold tracking-tight">
+        <p className="animate-bounce my-text text-3xl lg:text-4xl font-bold tracking-tight">
           Weather Loading...
         </p>
       </div>

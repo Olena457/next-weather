@@ -29,7 +29,7 @@
 ## Screenshot:
 
 <div style="text-align: center">
-  <img src="./public/images/preview.jpg" alt="app" width="600"/>
+  <img src="./public/images/home.jpg" alt="app" width="600"/>
   </div>
 
 - **Example of the main interface showing current and weekly forecast.**

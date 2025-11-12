@@ -176,8 +176,8 @@ export default function Navbar({ location }: Props) {
         </div>
       </nav>
       <div className="mx-2">
-        <section className=" flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-3xl">
-          <div className="relative w-full  max-w-sm">
+        <section className="relative z-30 flex justify-center w-full px-4 py-3 md:hidden glass-input-card-second rounded-3xl">
+          <div className="relative z-250 md:z-20 lg:z-10">
             <SearchInput
               value={city}
               onClear={handleClearInput}

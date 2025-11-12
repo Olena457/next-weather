@@ -15,7 +15,7 @@ export default function OptionBox({
   return (
     <>
       {((showOptions && options.length > 1) || error) && (
-        <ul className="  bg-white absolute   border top-11 mb-4 left-0 text-gray-500 border-gray-300 rounded-md min-w-[200px] flex flex-col  z-99 gap-1 py-2 px-2">
+      <ul className="bg-white absolute border top-11 left-0 text-gray-500 border-gray-300 rounded-md min-w-[200px] flex flex-col gap-1 py-2 px-2 force-dropdown">
           {error && options.length < 1 && (
             <li className="text-red-500 p-1">{error}</li>
           )}

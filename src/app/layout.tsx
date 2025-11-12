@@ -27,12 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <ClientProviders>
-        {/* <body
+        <body
           className={`antialiased bg-[url('/images/body.svg')] bg-no-repeat 
  bg-cover 
   bg-center `}
-        > */}
-        <body className="antialiased min-h-screen">
+        >
           {children}
         </body>
       </ClientProviders>
