@@ -14,6 +14,11 @@
 - **Flexible location search** - provides weather data for any city or location worldwide.
 
 ---
+### Extra Features
+- **Real-time Updates** – automatic data refresh without page reload.
+- **Geolocation Support** – detect weather based on the user's current location.
+- **Weather Icons & Animations** – visualize weather conditions (sun, rain, snow) with animated icons.
+- **Error Handling** – friendly messages in case of missing data or network issues.
 
 ### Responsive Design:
 - **Fully optimized for mobile, tablet, and desktop screens.**
