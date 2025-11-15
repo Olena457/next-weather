@@ -4,12 +4,14 @@
 ---
 
 ## Weather Forecast:
+
 - **This application was created to make it easy for users to check the weather forecast.**
 
 ---
 
 ### Key Features:
-- **Detailed forecast for the current day** - includes temperature, wind speed, humidity, pressure, and other parameters.
+
+- **Detailed forecast for the current day** - includes temperature, wind speed, humidity, pressure, and other .
 - **Approximate forecast for the next 7 days** - helps users plan trips, outdoor activities, or daily routines.
 - **Flexible location search** - provides weather data for any city or location worldwide.
 
@@ -17,16 +19,20 @@
 ### Extra Features
 - **Real-time Updates** – automatic data refresh without page reload.
 - **Geolocation Support** – detect weather based on the user's current location.
-- **Weather Icons & Animations** – visualize weather conditions (sun, rain, snow) with animated icons.
+- **Weather Icons & Animations** – visualize weather conditions (sun, rain, snow) with icons.
 - **Error Handling** – friendly messages in case of missing data or network issues.
 
+---
+
 ### Responsive Design:
+
 - **Fully optimized for mobile, tablet, and desktop screens.**
 - **The interface adapts seamlessly to different resolutions, ensuring a smooth user experience on any device.**
 
 ---
 
 ### Purpose:
+
 - **To deliver fast, accurate, and convenient access to weather information for everyday use.**
 
 ---
@@ -40,6 +46,7 @@
 - **Example of the main interface showing current and weekly forecast.**
 
 ---
+
 
 ## Technologies Used
 
